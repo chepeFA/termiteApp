@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VQq/CEcQWmyxgEGKyRbqqPsrAJbE3sFlA1yP7zZU81Cv3G660B9DBKE5u2WtLz2SgbGtrrVkuAaPhVBrmDJ6CA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\josez\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\josez\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
