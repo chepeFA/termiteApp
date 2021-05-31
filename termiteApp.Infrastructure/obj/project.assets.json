@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "termiteApp.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/termiteApp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/termiteApp.Core.dll": {}
+        }
       }
     }
   },
@@ -172,11 +182,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "termiteApp.Core/1.0.0": {
+      "type": "project",
+      "path": "../termiteApp.Core/termiteApp.Core.csproj",
+      "msbuildProject": "../termiteApp.Core/termiteApp.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "termiteApp.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -210,7 +226,11 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj": {
+              "projectPath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
