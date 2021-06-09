@@ -156,3 +156,12 @@ C:\Users\josez\source\repos\termiteApp\termiteApp\obj\Debug\netcoreapp3.1\termit
 C:\Users\josez\source\repos\termiteApp\termiteApp\obj\Debug\netcoreapp3.1\termiteApp.Api.dll
 C:\Users\josez\source\repos\termiteApp\termiteApp\obj\Debug\netcoreapp3.1\termiteApp.Api.pdb
 C:\Users\josez\source\repos\termiteApp\termiteApp\obj\Debug\netcoreapp3.1\termiteApp.Api.genruntimeconfig.cache
+C:\Users\josez\source\repos\termiteApp\termiteApp\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp\bin\Debug\netcoreapp3.1\termiteApp.Core.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp\bin\Debug\netcoreapp3.1\termiteApp.Infrastructure.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp\bin\Debug\netcoreapp3.1\termiteApp.Core.pdb
+C:\Users\josez\source\repos\termiteApp\termiteApp\bin\Debug\netcoreapp3.1\termiteApp.Infrastructure.pdb
+C:\Users\josez\source\repos\termiteApp\termiteApp\obj\Debug\netcoreapp3.1\termiteApp.Api.MvcApplicationPartsAssemblyInfo.cs

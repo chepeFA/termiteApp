@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "termiteApp.Api", "termiteApp\termiteApp.Api.csproj", "{5F1FA0F7-8BFD-41FA-B0C5-AC0E24235FB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "termiteApp.Core", "termiteApp.Core\termiteApp.Core.csproj", "{BAEF8213-52BF-4B33-A009-6BA5A8F0E479}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "termiteApp.Core", "termiteApp.Core\termiteApp.Core.csproj", "{BAEF8213-52BF-4B33-A009-6BA5A8F0E479}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "termiteApp.Infrastructure", "termiteApp.Infrastructure\termiteApp.Infrastructure.csproj", "{F38FDC3F-71D3-4200-A318-F35244B63100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "termiteApp.Infrastructure", "termiteApp.Infrastructure\termiteApp.Infrastructure.csproj", "{F38FDC3F-71D3-4200-A318-F35244B63100}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "termiteApp.Frontend", "termiteApp.Frontend\termiteApp.Frontend.csproj", "{98FE0D2A-05B5-4B83-92DB-695486BE12B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "termiteApp.Frontend", "termiteApp.Frontend\termiteApp.Frontend.csproj", "{98FE0D2A-05B5-4B83-92DB-695486BE12B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,15 +8,16 @@ namespace termiteApp.Core.Interfaces
    public interface ISectionRepository
     {
         //contract to be used for section repository
-        Section insertSection(Section model);
+        Section InsertSection(Section model);
 
-        Section updateSection(Section model);
+        Section UpdateSection(Section model);
 
         Section GetSection(Section model);
 
-        IEnumerable<Section> obtainSection();
+       IEnumerable<Section> ObtainSection();
 
-      //  Section deleteSection(Section model);
+
+       Section deleteSection(Section model);
 
         //IEnumerable<>
     }

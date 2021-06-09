@@ -1,0 +1,12 @@
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\bin\Debug\netcoreapp3.1\termiteApp.Infrastructure.deps.json
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\bin\Debug\netcoreapp3.1\termiteApp.Infrastructure.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\bin\Debug\netcoreapp3.1\termiteApp.Infrastructure.pdb
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\bin\Debug\netcoreapp3.1\termiteApp.Core.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\bin\Debug\netcoreapp3.1\termiteApp.Core.pdb
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\obj\Debug\netcoreapp3.1\termiteApp.Infrastructure.csprojAssemblyReference.cache
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\obj\Debug\netcoreapp3.1\termiteApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\obj\Debug\netcoreapp3.1\termiteApp.Infrastructure.AssemblyInfo.cs
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\obj\Debug\netcoreapp3.1\termiteApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\obj\Debug\netcoreapp3.1\termiteApp.Infrastructure.csproj.CopyComplete
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\obj\Debug\netcoreapp3.1\termiteApp.Infrastructure.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp.Infrastructure\obj\Debug\netcoreapp3.1\termiteApp.Infrastructure.pdb

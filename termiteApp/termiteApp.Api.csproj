@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
@@ -14,6 +15,12 @@
     <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\termiteApp.Core\termiteApp.Core.csproj" />
+    <ProjectReference Include="..\termiteApp.Infrastructure\termiteApp.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

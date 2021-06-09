@@ -9,6 +9,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Serialization;
+using termiteApp.Core;
+using termiteApp.Infrastructure;
+using termiteApp.Core.Interfaces;
+using termiteApp.Core.UserCase;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Mvc;
+//using Microsoft.OpenApi.Models;
 
 namespace termiteApp
 {
@@ -24,22 +31,52 @@ namespace termiteApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            //   services.AddControllersWithViews();
+
+            services.AddControllers();
+            services.AddTransient<ISectionUserCase, SectionUserCase>();
+            services.AddTransient<ISectionRepository, SectionRepository>();
+            services.AddTransient<ITypeReportUserCase, TypeReportUserCase>();
+            services.AddTransient<ITypeReportRepository, TypeReportRepository>();
+            services.AddSwaggerGen(options =>
+           {
+           var groupName = "v1";
+           options.SwaggerDoc(groupName, new OpenApiInfo
+
+               {
+                   Title = $"Api Netcore {groupName}",
+                    Version = groupName,
+                    Description = "NetCore API",
+
+                   Contact = new OpenApiContact
+                   {
+                       Name = "Jose Arias",
+                       Email = string.Empty,
+                       //  Url = new Uri("");
+
+                   }
+
+               });
+        });
+        
+
+
 
             //enable CORS
-         //   services.AddCors(c =>
-           // {
-             //   c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            //   services.AddCors(c =>
+            // {
+            //   c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             //});
 
             //JSON serializer
-          //  services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            //  services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore).AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             //services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            /*
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             if (env.IsDevelopment())
             {
@@ -64,6 +101,24 @@ namespace termiteApp
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            */
+            if(env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Foo API V1");
+            });
+
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
+           {
+               endpoints.MapControllers();
+           });
         }
     }
 }

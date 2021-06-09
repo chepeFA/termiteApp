@@ -10,10 +10,10 @@ namespace termiteApp.Core.Domain
 
     public class Section
     {
-        public int sctId { get; set; }
-        public string sctName { get; set; }
+        public int SctId { get; set; }
+        public string SctName { get; set; }
 
-        public string sctDescription { get; set; }
+        public string SctDescription { get; set; }
 
     }
 

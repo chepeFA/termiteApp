@@ -1,0 +1,9 @@
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\bin\Debug\netcoreapp3.1\termiteApp.Core.deps.json
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\bin\Debug\netcoreapp3.1\termiteApp.Core.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\bin\Debug\netcoreapp3.1\termiteApp.Core.pdb
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\obj\Debug\netcoreapp3.1\termiteApp.Core.csprojAssemblyReference.cache
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\obj\Debug\netcoreapp3.1\termiteApp.Core.AssemblyInfoInputs.cache
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\obj\Debug\netcoreapp3.1\termiteApp.Core.AssemblyInfo.cs
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\obj\Debug\netcoreapp3.1\termiteApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\obj\Debug\netcoreapp3.1\termiteApp.Core.dll
+C:\Users\josez\source\repos\termiteApp\termiteApp.Core\obj\Debug\netcoreapp3.1\termiteApp.Core.pdb

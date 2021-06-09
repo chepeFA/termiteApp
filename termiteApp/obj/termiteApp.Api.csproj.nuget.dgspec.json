@@ -4,6 +4,142 @@
     "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp\\termiteApp.Api.csproj": {}
   },
   "projects": {
+    "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj",
+        "projectName": "termiteApp.Core",
+        "projectPath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj",
+        "packagesPath": "C:\\Users\\josez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\josez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Infrastructure\\termiteApp.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Infrastructure\\termiteApp.Infrastructure.csproj",
+        "projectName": "termiteApp.Infrastructure",
+        "projectPath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Infrastructure\\termiteApp.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\josez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\josez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj": {
+                "projectPath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp\\termiteApp.Api.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +167,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj": {
+                "projectPath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Core\\termiteApp.Core.csproj"
+              },
+              "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Infrastructure\\termiteApp.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\josez\\source\\repos\\termiteApp\\termiteApp.Infrastructure\\termiteApp.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -65,6 +208,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.4, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

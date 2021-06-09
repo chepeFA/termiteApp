@@ -7,15 +7,18 @@ namespace termiteApp.Core.Interfaces
 {
    public interface ISectionUserCase
     {
-        Section insertSection(Section model);
-
-        Section updateSection(Section model);
-
-      //  Section deleteSection(Section model);
-
         Section GetSection(Section model);
 
         IEnumerable<Section> obtainSection();
+        Section InsertSection(Section model);
+
+        Section UpdateSection(Section model);
+
+        Section deleteSection(Section model);
+
+        
+
+       
 
 
     }
