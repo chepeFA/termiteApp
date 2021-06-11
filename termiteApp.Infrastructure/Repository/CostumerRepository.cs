@@ -7,27 +7,25 @@ using termiteApp.Core.Domain;
 using termiteApp.Core.Interfaces;
 using Microsoft.Extensions.Configuration;
 
-namespace termiteApp.Infrastructure
+namespace termiteApp.Infrastructure.Repository
 {
-    public class SectionRepository : ISectionRepository
+    public class CostumerRepository :ICostumerRepository
     {
         private readonly IConfiguration _configuration;
 
-        //constructor
-
-        public SectionRepository(IConfiguration configuration)
+        public CostumerRepository(IConfiguration configuration)
         {
             _configuration = (configuration != null) ? configuration : throw new ArgumentNullException(nameof(configuration));
         }
 
-        public Section GetSection(Section model)
+        public Costumer GetCostumer(Costumer model)
         {
-            Section newModel = null;
+            Costumer newModel = null;
             try
             {
                 using (SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
                 {
-                    string query = "SELECT sctId, sctName, sctDescription FROM Section WHERE sctId = @sctId ";
+                    string query = "SELECT ctmId, cmtName, cmtLastName, cmtEmail, cmtPhoneNumber, cmtAgencyRealtor FROM Custumer WHERE ctmId = @ctmId ";
                     con.Open();
                     using (SqlTransaction sqlTran = con.BeginTransaction())
                     {
@@ -35,18 +33,22 @@ namespace termiteApp.Infrastructure
                         {
                             cmd.Transaction = sqlTran;
                             cmd.Connection = con;
-                            cmd.Parameters.AddWithValue("sctId", model.SctId);
+                            cmd.Parameters.AddWithValue("ctmId", model.ctmId);
 
                             using (SqlDataReader sdr = cmd.ExecuteReader())
                             {
                                 while (sdr.Read())
                                 {
-                                    newModel = new Section()
+                                    newModel = new Costumer()
                                     {
-                                        SctId = (sdr["sctId"] != null) ? int.Parse(sdr["sctId"].ToString()) : 0,
-                                        SctName = sdr["sctName"].ToString(),
-                                        SctDescription = sdr["sctDescription"].ToString()
+                                        ctmId = (sdr["ctmId"] != null) ? int.Parse(sdr["ctmId"].ToString()) : 0,
+                                        ctmName = sdr["cmtName"].ToString(),
+                                        ctmLastName = sdr["cmtLastName"].ToString(),
+                                        ctmEmail = sdr["cmtName"].ToString(),
+                                        ctmPhoneNumber = sdr["cmtPhoneNumber"].ToString(),
+                                        ctmAgency = sdr["cmtAgencyRealtor"].ToString()
                                     };
+
                                 }
                             }
                             sqlTran.Commit();
@@ -63,9 +65,10 @@ namespace termiteApp.Infrastructure
             return newModel;
         }
 
-        public Section InsertSection(Section model)
+
+        public Costumer InsertCostumer(Costumer model)
         {
-            Section newModel = null;
+            Costumer newModel = null;
             try
             {
                 using (SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
@@ -77,11 +80,14 @@ namespace termiteApp.Infrastructure
                         using (SqlCommand cmd = new SqlCommand())
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.CommandText = "insertSection";
+                            cmd.CommandText = "insertCustomer";
                             cmd.Transaction = sqltran;
-                            cmd.Connection = con;
-                            cmd.Parameters.AddWithValue("sctName", model.SctName);
-                            cmd.Parameters.AddWithValue("sctDescription", model.SctDescription);
+                            cmd.Connection = con; //parameter has to be exact as the parameters in the database
+                            cmd.Parameters.AddWithValue("ctmName", model.ctmName);
+                            cmd.Parameters.AddWithValue("ctmLastName", model.ctmLastName);
+                            cmd.Parameters.AddWithValue("ctmEmail", model.ctmEmail);
+                            cmd.Parameters.AddWithValue("ctmPhoneNumber", model.ctmPhoneNumber);
+                            cmd.Parameters.AddWithValue("ctmAgencyRealtor", model.ctmAgency);
                             int result = cmd.ExecuteNonQuery();
                             sqltran.Commit();
                             newModel = model;
@@ -99,25 +105,28 @@ namespace termiteApp.Infrastructure
             return newModel;
         }
 
-        public Section UpdateSection(Section model)
+        public Costumer UpdateCostumer(Costumer model)
         {
-            Section newModel = null;
+            Costumer newModel = null;
             try
             {
-                using(SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+                using (SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
                 {
                     con.Open();
-                    using(SqlTransaction sqltran = con.BeginTransaction())
+                    using (SqlTransaction sqltran = con.BeginTransaction())
                     {
-                        using(SqlCommand cmd = new SqlCommand())
+                        using (SqlCommand cmd = new SqlCommand())
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.CommandText = "updateSection";
+                            cmd.CommandText = "updateCustomer";
                             cmd.Transaction = sqltran;
                             cmd.Connection = con;
-                            cmd.Parameters.AddWithValue("sctName", model.SctName);
-                            cmd.Parameters.AddWithValue("sctDescription", model.SctDescription);
-                            cmd.Parameters.AddWithValue("sctId", model.SctId);
+                            cmd.Parameters.AddWithValue("cmtName", model.ctmName);
+                            cmd.Parameters.AddWithValue("cmtLastName", model.ctmLastName);
+                            cmd.Parameters.AddWithValue("cmtEmail", model.ctmEmail);
+                            cmd.Parameters.AddWithValue("cmtPhoneNumber", model.ctmPhoneNumber);
+                            cmd.Parameters.AddWithValue("cmtAgencyRealtor", model.ctmAgency);
+                            cmd.Parameters.AddWithValue("ctmId", model.ctmId);
                             int result = cmd.ExecuteNonQuery();
                             sqltran.Commit();
                             newModel = model;
@@ -127,40 +136,42 @@ namespace termiteApp.Infrastructure
                     con.Close();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new ArgumentException(ex.ToString());
             }
             return newModel;
         }
 
-        public IEnumerable<Section> ObtainSection()
+        public IEnumerable<Costumer> ObtainCostumer()
         {
-            List<Section> list = new List<Section>();
-            Section model = null;
+            List<Costumer> list = new List<Costumer>();
+            Costumer model = null;
             try
             {
-                using(SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"))) 
-                    {
+                using (SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+                {
 
-                    string query = "SELECT sctId, sctName, sctDescription FROM Section";
+                    string query = "SELECT ctmId, cmtName, cmtLastName, cmtEmail, cmtPhoneNumber, cmtAgencyRealtor FROM Custumer";
                     con.Open();
                     using (SqlTransaction sqltran = con.BeginTransaction())
                     {
-                        using(SqlCommand cmd = new SqlCommand(query))
+                        using (SqlCommand cmd = new SqlCommand(query))
                         {
                             cmd.Transaction = sqltran;
                             cmd.Connection = con;
-                            using(SqlDataReader sdr = cmd.ExecuteReader())
+                            using (SqlDataReader sdr = cmd.ExecuteReader())
                             {
-                                while(sdr.Read())
+                                while (sdr.Read())
                                 {
-                                    list.Add(new Section()
-                                        {
-                                        SctId = (sdr["sctId"] != null) ? int.Parse(sdr["sctId"].ToString()) : 0,
-                                        SctName = sdr["sctName"].ToString(),
-                                        SctDescription = sdr["sctDescription"].ToString(),
-
+                                    list.Add(new Costumer()
+                                    {
+                                        ctmId = (sdr["ctmId"] != null) ? int.Parse(sdr["ctmId"].ToString()) : 0,
+                                        ctmName = sdr["cmtName"].ToString(),
+                                        ctmLastName = sdr["cmtLastName"].ToString(),
+                                        ctmEmail = sdr["cmtEmail"].ToString(),
+                                        ctmPhoneNumber = sdr["cmtPhoneNumber"].ToString(),
+                                        ctmAgency = sdr["cmtAgencyRealtor"].ToString(),
 
                                     });
                                 }
@@ -171,7 +182,7 @@ namespace termiteApp.Infrastructure
                     con.Close();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new ArgumentException(ex.ToString());
             }
@@ -179,10 +190,10 @@ namespace termiteApp.Infrastructure
             return list;
         }
 
-
-        public Section deleteSection(Section model)
+        /*
+        public Costumer DeleteCostumer(Costumer model)
         {
-            Section newModel = null;
+            Costumer newModel = null;
             try
             {
                 using (SqlConnection con = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
@@ -193,10 +204,10 @@ namespace termiteApp.Infrastructure
                         using (SqlCommand cmd = new SqlCommand())
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.CommandText = "deleteSection";
+                            cmd.CommandText = "deleteCostumer";
                             cmd.Transaction = sqlTran;
                             cmd.Connection = con;
-                            cmd.Parameters.AddWithValue("SctId", model.SctId);
+                            cmd.Parameters.AddWithValue("ctmId", model.ctmId);
                             int result = cmd.ExecuteNonQuery();
                             sqlTran.Commit();
                             newModel = model;
@@ -212,8 +223,7 @@ namespace termiteApp.Infrastructure
             return newModel;
         }
 
-
-
+        */
 
     }
 }

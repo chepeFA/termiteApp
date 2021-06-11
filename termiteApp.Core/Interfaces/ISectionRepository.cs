@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using termiteApp.Core.Domain;
-
 namespace termiteApp.Core.Interfaces
 {
-   public interface ISectionRepository
+    public interface ISectionRepository
     {
         //contract to be used for section repository
         Section InsertSection(Section model);
@@ -14,11 +13,9 @@ namespace termiteApp.Core.Interfaces
 
         Section GetSection(Section model);
 
-       IEnumerable<Section> ObtainSection();
+        IEnumerable<Section> ObtainSection();
 
 
-       Section deleteSection(Section model);
-
-        //IEnumerable<>
+        Section deleteSection(Section model);
     }
 }

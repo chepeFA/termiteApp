@@ -40,11 +40,11 @@ namespace termiteApp.Infrastructure
                             {
                                 while (sdr.Read())
                                 {
-                                    newModel = new TypeReport();
+                                    newModel = new TypeReport()
                                     {
-                                        model.trpId = (sdr["trpId"] != null) ? int.Parse(sdr["trpId"].ToString()) : 0;
-                                        model.trpName = sdr["trpName"].ToString();
-                                        model.trpDescription = sdr["trpDescription"].ToString();
+                                        trpId = (sdr["trpId"] != null) ? int.Parse(sdr["trpId"].ToString()) : 0,
+                                        trpName = sdr["trpName"].ToString(),
+                                        trpDescription = sdr["trpDescription"].ToString()
                                     };
 
                                 }

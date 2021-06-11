@@ -15,6 +15,8 @@ using termiteApp.Core.Interfaces;
 using termiteApp.Core.UserCase;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using termiteApp.Infrastructure.Repository;
+//using termiteApp.Infrastructure.Repository;
 //using Microsoft.OpenApi.Models;
 
 namespace termiteApp
@@ -32,12 +34,25 @@ namespace termiteApp
         public void ConfigureServices(IServiceCollection services)
         {
             //   services.AddControllersWithViews();
+            //DEPENDECY INJECTION
 
             services.AddControllers();
             services.AddTransient<ISectionUserCase, SectionUserCase>();
             services.AddTransient<ISectionRepository, SectionRepository>();
+
             services.AddTransient<ITypeReportUserCase, TypeReportUserCase>();
             services.AddTransient<ITypeReportRepository, TypeReportRepository>();
+
+            services.AddTransient<IStateInspectionUserCase, StateInspectionUserCase>();
+            services.AddTransient<IStateSectionRepository, StateInspectionRepository>();
+
+            services.AddTransient<IStateUserCase, StateUserCase>();
+            services.AddTransient<IStateRepository, StateRepository>();
+
+            services.AddTransient<ICostumerUserCase, CostumerUserCase>();
+            services.AddTransient<ICostumerRepository, CostumerRepository>();
+
+
             services.AddSwaggerGen(options =>
            {
            var groupName = "v1";
