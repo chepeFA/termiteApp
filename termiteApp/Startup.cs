@@ -35,7 +35,7 @@ namespace termiteApp
         {
             //   services.AddControllersWithViews();
             //DEPENDECY INJECTION
-
+           // services.AddControllers().AddNewtonsoftJson();
             services.AddControllers();
             services.AddTransient<ISectionUserCase, SectionUserCase>();
             services.AddTransient<ISectionRepository, SectionRepository>();
@@ -51,6 +51,12 @@ namespace termiteApp
 
             services.AddTransient<ICostumerUserCase, CostumerUserCase>();
             services.AddTransient<ICostumerRepository, CostumerRepository>();
+
+            services.AddTransient<IInspectorUserCase, InspectorUserCase>();
+            services.AddTransient<IInspectorRepository, InspectorRepository>();
+
+            services.AddTransient<IBuildingUserCase, BuildingUserCase>();
+            services.AddTransient<IBuildingRepository, BuildingRepository>();
 
 
             services.AddSwaggerGen(options =>
